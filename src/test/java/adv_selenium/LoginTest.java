@@ -6,11 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utility.Helper;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class LoginTest {
@@ -25,7 +27,7 @@ public class LoginTest {
         Helper.scroll(1000, driver);
     }
     @Test(enabled = false)
-    public void test_LoginTest() throws InterruptedException {
+    public void test_LoginTest() throws InterruptedException, IOException {
         try {
             login();
         } catch (NoSuchElementException nse) {
@@ -35,21 +37,33 @@ public class LoginTest {
             login();
         } catch (Exception e) {
             System.out.println("Exception in the Login : " + e.getMessage());
+            Helper.takeScreenshots(driver, "TC2");
+            e.printStackTrace();
+            Assert.fail();
         }
     }
 
     @Test
-    public void test_LoginTest_using_implicit_wait() throws InterruptedException {
+    public void test_LoginTest_using_implicit_wait() throws InterruptedException, IOException {
         try {
             login();
         } catch (Exception e) {
-            System.out.println("Exception in the Login : " + e.getMessage());
+            Helper.takeScreenshots(driver, "TC2");
+            e.printStackTrace();
+            Assert.fail();
         }
     }
 
     @Test
-    public void test_logout(){
-        logout();
+    public void test_logout() throws IOException {
+        try{
+            logout();
+        }
+        catch (Exception e){
+            Helper.takeScreenshots(driver, "TC2");
+            e.printStackTrace();
+            Assert.fail();
+        }
     }
 
     @Test(enabled = false)
