@@ -36,9 +36,9 @@ public class Netbanking {
 
         driver.findElement(By.xpath("//a[contains(.,'Credit Card only? Login here')]")).click();
 
-        Set<String> windowHandles = driver.getWindowHandles();
-        System.out.println(driver.getCurrentUrl());
-        driver.findElement(By.id("openMarketUID")).sendKeys("12345");
+//        Set<String> windowHandles = driver.getWindowHandles();
+//        System.out.println(driver.getCurrentUrl());
+//        driver.findElement(By.id("openMarketUID")).sendKeys("12345");
 
     }
 

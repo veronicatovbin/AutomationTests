@@ -115,7 +115,7 @@ public class AutomationTestingUsingTestNG {
         //Thread.sleep(1000);
     }
 
-    @Test (enabled = false, priority = 10)
+    @Test (enabled = true, priority = 10)
     public void TC11_testInputPara() {
         driver.findElement(By.name("What do you think of this form?")).sendKeys("Difficult ");
         //Thread.sleep(2000);
