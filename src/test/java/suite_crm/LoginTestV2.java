@@ -39,8 +39,11 @@ public class LoginTestV2 {
             Assert.assertTrue(driver.findElement(By.name("username")).isDisplayed());
             login("veronica","123456");
             Assert.assertTrue(driver.findElement(By.name("global-search-term")).isDisplayed());
+            Thread.sleep(4000);
+            logout();
         }
         catch (Exception e){
+            System.out.println("-------- Catch block");
             Helper.takeScreenshots(driver, "TC1");
             e.printStackTrace();
             Assert.fail();
@@ -48,18 +51,6 @@ public class LoginTestV2 {
     }
 
     @Test(priority = 2)
-    public void TC2_loggedInUser_Logout_Success() throws IOException {
-        try{
-            logout();
-        }
-        catch (Exception e){
-            Helper.takeScreenshots(driver, "TC2");
-            e.printStackTrace();
-            Assert.fail();
-        }
-    }
-
-    @Test(priority = 3)
     public void TC3_wrongUsername_Login_ErrorMessageIsDisplayed() throws InterruptedException, IOException {
      try{
          Assert.assertTrue(driver.findElement(By.name("username")).isDisplayed());
@@ -67,7 +58,7 @@ public class LoginTestV2 {
          Assert.assertTrue(driver.findElement(By.xpath("//div[@role='alert']")).isDisplayed());
         }
         catch (Exception e){
-            Helper.takeScreenshots(driver, "TC3");
+            Helper.takeScreenshots(driver, "TC2");
             e.printStackTrace();
             Assert.fail();
         }

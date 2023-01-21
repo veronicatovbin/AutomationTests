@@ -19,7 +19,7 @@ public class Helper {
         javascriptExecutor.executeScript("window.scrollBy(0,"+num + ")","");
     }
     public static WebDriver setup(String url){
-        System.setProperty("webdriver.chrome.driver", "D:\\Git\\AutomationWithVeronica\\drivers\\chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "D:\\Git\\AutomationWithVeronica\\drivers\\chromedriver.exe");
 
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
@@ -29,16 +29,16 @@ public class Helper {
 
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        // This is telling the selenium webdriver to wait for 10 seconds before it throws exception for unresponsive page
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        // This is telling the selenium webdriver to wait for 20 seconds before it throws exception for unresponsive page
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 
-        // This is telling the selenium webdriver to wait for 5 seconds before it throws exception for Javascript errors
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
+        // This is telling the selenium webdriver to wait for 20 seconds before it throws exception for Javascript errors
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
 
-        //This is telling the selenium webdriver not to throw the No such element exception for 10 seconds or;
-        // This is telling the selenium webdriver to wait for 10 seconds before
+        //This is telling the selenium webdriver not to throw the No such element exception for 20 seconds or;
+        // This is telling the selenium webdriver to wait for 20 seconds before
         // it throws the No such element exception on all webelements
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(url);
 
         return driver;

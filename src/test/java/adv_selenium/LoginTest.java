@@ -57,6 +57,7 @@ public class LoginTest {
     @Test
     public void test_logout() throws IOException {
         try{
+            Thread.sleep(4000);
             logout();
         }
         catch (Exception e){

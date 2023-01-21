@@ -22,7 +22,6 @@ public class CreateAccount {
         System.out.println("Before Test - Setup");
         String url = "https://suitecrm.theautomationtechies.com/public/index.php#/Login";
         driver = Helper.setup(url);
-        Helper.scroll(1000, driver);
 
 }
 @Test(priority=1)
