@@ -78,6 +78,19 @@ public class LoginTestV2 {
             Assert.fail();
         }
     }
+    @Test(priority = 4)
+    public void TC4_wrongUsername_Login_ErrorMessageIsDisplayed() throws InterruptedException, IOException {
+        try{
+            Assert.assertTrue(driver.findElement(By.name("username")).isDisplayed());
+            login("veronica4","123456");
+            Assert.assertTrue(driver.findElement(By.xpath("//div[@role='alert']")).isDisplayed());
+        }
+        catch (Exception e){
+            Helper.takeScreenshots(driver, "TC4");
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
     public void login(String username, String password) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.findElement(By.name("username")).sendKeys(username);
