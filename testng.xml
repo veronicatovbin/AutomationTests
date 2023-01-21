@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Veronica's Test Suite">
+    <test verbose="2" name="Automation Tests">
+        <classes>
+            <class name="adv_selenium.AutomationTestingUsingTestNG" />
+            <class name="adv_selenium.LoginTest"/>
+            <class name="adv_selenium.Netbanking"/>
+            <class name="adv_selenium.TestNG_Example"/>
+            <class name="suite_crm.LoginTestV2"/>
+        </classes>
+    </test>
+</suite>
